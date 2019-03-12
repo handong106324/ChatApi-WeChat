@@ -35,6 +35,9 @@ final class WeChatContacts {
                 member.name = user.NickName;
                 member.display = user.DisplayName;
                 group.members.put(member.id, member);
+                if (member.name.equals(WeChatDemo.queryContactName)) {
+                    WeChatDemo.monitorContactId = member.id;
+                }
             }
             return (T) group;
         } else {
